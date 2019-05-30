@@ -1,0 +1,44 @@
+// Method that takes an array of consecutive (increasing) letters as input
+// and returns the missing letter in the array
+
+// Initial solution
+public class Kata
+{
+  public static char findMissingLetter(char[] array)
+  {
+    int asciiStart;
+    char start = array[0];
+    int comparator = (int) start;
+    
+    for(int i = 0; i < array.length; i++){
+      if(comparator != array[i]){
+        break;
+      }
+      else{
+        comparator++; 
+      }
+    }
+    
+    return (char) comparator;
+  }
+}
+
+// Best solution
+// Submitted by Hairy-Lime,GorditoLee1045,timliuuuu
+
+// for(char letter: array) -- "for-each" loop
+// loops through elements in an array
+
+/*
+public class Kata
+{
+  public static char findMissingLetter(char[] array){
+    char expectableLetter = array[0];
+    for(char letter : array){
+      if(letter != expectableLetter) break;
+      expectableLetter++;
+    }
+    return expectableLetter;
+  }
+}
+*/
