@@ -1,0 +1,36 @@
+// Initial solution
+
+public class Factorial {
+
+  public int factorial(int n) {
+    int factorial = 1;
+    
+    if(n < 0 || n > 12){
+      throw new IllegalArgumentException("Number must be between 0 and 12, exclusive");
+    }
+    
+    for(int i = n; i >= 0; i--){
+      if(i == 0){
+        factorial = factorial * 1;
+      }
+      else{
+        factorial = factorial * i;
+      }
+    }
+    return factorial;
+  }
+}
+
+// Best solution
+// Submitted by Azuaron, PhillMue, muma, joaquinsanroman, CoderJM, Fogman
+
+// Uses recursion
+// If n <= 1, return 1
+// If not, return n * factorial(n - 1);
+
+public class Factorial {
+  public int factorial(int n) {
+    if(n < 0 || n > 12) throw new IllegalArgumentException("Useless fuffery!");
+    return n <= 1 ? 1 : n * factorial(n - 1);
+  }
+}
